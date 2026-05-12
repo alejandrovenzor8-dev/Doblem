@@ -38,6 +38,7 @@ export default function AgendaPage() {
     const d = new Date(year, month, day);
     const now = new Date();
     now.setHours(0, 0, 0, 0);
+    // Disable past dates and Sundays (office is closed on Sundays)
     return d < now || d.getDay() === 0;
   };
 
