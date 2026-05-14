@@ -49,10 +49,10 @@ export default function NosotrosPage() {
 
       {/* Story */}
       <section className="py-20 px-4 md:px-8 lg:px-16 bg-white">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-start">
           <div>
             <p className="text-[#c9a96e] text-sm font-semibold tracking-[0.3em] uppercase mb-3">
-              Nuestra Historia
+              Nuestra Historia (Fuente Actual)
             </p>
             <h2
               className="text-4xl font-bold text-[#1a1a1a] mb-6"
@@ -77,12 +77,31 @@ export default function NosotrosPage() {
             </p>
           </div>
           <div
-            className="rounded-2xl overflow-hidden"
-            style={{
-              height: "400px",
-              background: "linear-gradient(135deg, #1a2744 0%, #c9a96e 100%)",
-            }}
-          />
+            className="rounded-2xl border border-[#ede8dc] p-6 lg:p-8"
+            style={{ fontFamily: '"Times New Roman", Times, serif' }}
+          >
+            <p className="text-[#c9a96e] text-sm font-semibold tracking-[0.3em] uppercase mb-3">
+              Nuestra Historia (Times New Roman)
+            </p>
+            <h2 className="text-4xl font-bold text-[#1a1a1a] mb-6">
+              15 Años Construyendo Sueños
+            </h2>
+            <p className="text-[#4a4a4a] leading-relaxed mb-4">
+              Fundada en 2009 en la ciudad de Chihuahua, DobleM nació con la
+              misión de transformar el mercado inmobiliario local ofreciendo
+              propiedades y servicios de construcción de la más alta calidad.
+            </p>
+            <p className="text-[#4a4a4a] leading-relaxed mb-4">
+              A lo largo de 15 años, hemos completado más de 50 proyectos
+              residenciales y comerciales, ganando la confianza de más de 200
+              familias y empresas en Chihuahua.
+            </p>
+            <p className="text-[#4a4a4a] leading-relaxed">
+              Nuestro compromiso con la excelencia, la transparencia y la
+              atención personalizada nos posiciona como el referente en diseño
+              y construcción premium en la región.
+            </p>
+          </div>
         </div>
       </section>
 
