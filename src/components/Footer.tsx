@@ -56,7 +56,7 @@ export default function Footer() {
                 <Share2 size={16} />
               </a>
               <a
-                href="https://wa.me/526140000000"
+                href="https://wa.me/526142243474"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-9 h-9 bg-[#1a1a1a] rounded-full flex items-center justify-center hover:bg-[#25D366] transition-colors"
@@ -120,7 +120,7 @@ export default function Footer() {
               <li className="flex items-center gap-3">
                 <Phone size={16} className="text-[#c9a96e] flex-shrink-0" />
                 <a
-                  href="tel:+526140000000"
+                  href="tel:+526142243474"
                   className="text-[#8a8a8a] text-sm hover:text-[#c9a96e] transition-colors"
                 >
                   +52 614 000 0000

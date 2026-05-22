@@ -3,6 +3,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import VirtualAssistant from "@/components/assistant/VirtualAssistant";
 
 export const metadata: Metadata = {
   title: "DobleM Diseño y Construcción | Inmuebles Premium en Chihuahua",
@@ -39,6 +40,7 @@ export default function RootLayout({
         <main>{children}</main>
         <Footer />
         <WhatsAppButton />
+        <VirtualAssistant />
       </body>
     </html>
   );

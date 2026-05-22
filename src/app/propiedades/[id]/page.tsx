@@ -157,7 +157,7 @@ export default async function PropertyDetailPage({ params }: PageProps) {
                 Contáctanos para más información o agenda una visita.
               </p>
               <a
-                href={`https://wa.me/526140000000?text=Hola, me interesa la propiedad: ${encodeURIComponent(property.title)}`}
+                href={`https://wa.me/526142243474?text=Hola, me interesa la propiedad: ${encodeURIComponent(property.title)}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center justify-center gap-2 w-full py-3.5 bg-[#25D366] text-white font-semibold rounded-xl hover:bg-[#1daa52] transition-colors mb-4"
