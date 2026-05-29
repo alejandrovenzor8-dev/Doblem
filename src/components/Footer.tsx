@@ -11,11 +11,11 @@ const quickLinks = [
 ];
 
 const servicios = [
-  { label: "Venta de Inmuebles", href: "/servicios" },
-  { label: "Construcción Residencial", href: "/servicios" },
-  { label: "Diseño Personalizado", href: "/servicios" },
+  { label: "Diseño y Construcción", href: "/servicios" },
+  { label: "Obra Pública y Privada", href: "/servicios" },
+  { label: "Remodelaciones", href: "/servicios" },
+  { label: "Desarrollo Inmobiliario", href: "/propiedades" },
   { label: "Cotización", href: "/cotizacion" },
-  { label: "Comparador", href: "/comparador" },
 ];
 
 export default function Footer() {
@@ -37,8 +37,7 @@ export default function Footer() {
               </span>
             </Link>
             <p className="text-[#8a8a8a] text-sm leading-relaxed mb-6">
-              Empresa líder en inmuebles premium y construcción residencial en
-              Chihuahua, México. 15 años construyendo sueños.
+              Empresa especializada en diseño arquitectónico, construcción y desarrollo de inmuebles premium en Chihuahua, México. Desde 2017.
             </p>
             <div className="flex gap-3">
               <a
