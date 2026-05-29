@@ -7,12 +7,16 @@ import TestimonialsSection from "@/components/TestimonialsSection";
 import ProcessSection from "@/components/ProcessSection";
 import LeadForm from "@/components/LeadForm";
 import CTASection from "@/components/CTASection";
+import { getAllPropertyImages } from "@/lib/getPropertyImages";
+import { properties } from "@/data/properties";
 
 export default function HomePage() {
+  const imagesMap = getAllPropertyImages(properties);
+
   return (
     <>
       <Hero />
-      <PropertiesSection />
+      <PropertiesSection imagesMap={imagesMap} />
       <ServicesSection />
       <WhyDobleM />
       <PortfolioSection />

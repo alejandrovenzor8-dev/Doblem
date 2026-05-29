@@ -11,8 +11,9 @@ export interface Property {
   description: string;
   features: string[];
   amenities: string[];
-  status: "disponible" | "vendido" | "en_proceso";
+  status: "disponible" | "vendido" | "en_proceso" | "pre_venta";
   gradient: string;
+  galleryFolder?: string;
 }
 
 export const properties: Property[] = [
@@ -50,36 +51,35 @@ export const properties: Property[] = [
   },
   {
     id: "2",
-    title: "Penthouse Torre Cima",
-    price: "$6,200,000 MXN",
-    priceNum: 6200000,
-    location: "Colonia Cumbres, Chihuahua",
-    type: "departamento",
+    title: "Residencia Contemporánea Asturias",
+    price: "$7,150,000 MXN",
+    priceNum: 7150000,
+    location: "Fraccionamiento Asturias Residencial, Chihuahua",
+    type: "casa",
     bedrooms: 3,
     bathrooms: 3,
-    area: 210,
+    area: 273,
     description:
-      "Exclusivo penthouse en el piso 15 de la Torre Cima con vista panorámica a la ciudad. Terraza privada de 80 m² y acabados de lujo europeos.",
+      "Residencia contemporánea de lujo en Asturias Residencial, con 220.50 m² de terreno y 273.58 m² de construcción. Diseño moderno, amplitud y acabados premium en cada detalle, ubicada en una de las zonas con mayor plusvalía y crecimiento residencial de Chihuahua.",
     features: [
-      "Terraza privada 80 m²",
-      "Vista panorámica 360°",
-      "Cocina europea equipada",
-      "Walk-in closet en recámara principal",
-      "Jacuzzi en terraza",
-      "2 cajones de estacionamiento",
-      "Bodega privada",
-      "Elevador privado",
+      "Recámara principal con baño completo y balcón privado",
+      "Amplio vestidor en recámara principal",
+      "2 recámaras secundarias con vestidor",
+      "Cocina-comedor con distribución funcional y elegante",
+      "Acogedora estancia familiar en planta alta",
+      "Cochera para 2 vehículos",
+      "Moderna iluminación premium",
+      "Arquitectura contemporánea con acabados de lujo",
     ],
     amenities: [
-      "Terraza",
-      "Jacuzzi",
-      "Estacionamiento",
-      "Bodega",
-      "Gimnasio del edificio",
-      "Salón de eventos",
+      "Balcón privado",
+      "Vestidor",
+      "Cochera",
+      "Estancia familiar",
     ],
-    status: "disponible",
-    gradient: "linear-gradient(135deg, #0d1b3e 0%, #1a2744 50%, #8b6914 100%)",
+    status: "pre_venta",
+    gradient: "linear-gradient(135deg, #0f2027 0%, #203a43 50%, #8b7355 100%)",
+    galleryFolder: "ptc",
   },
   {
     id: "3",

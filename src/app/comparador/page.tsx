@@ -38,6 +38,7 @@ export default function ComparadorPage() {
         disponible: "Disponible",
         vendido: "Vendido",
         en_proceso: "En Proceso",
+        pre_venta: "Pre-venta",
       };
       return map[val as string] ?? String(val);
     }

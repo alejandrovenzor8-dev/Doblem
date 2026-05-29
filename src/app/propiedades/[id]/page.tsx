@@ -2,6 +2,8 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { MapPin, Bed, Bath, CheckCircle, MessageCircle } from "lucide-react";
 import { properties } from "@/data/properties";
+import PropertyGallery from "@/components/PropertyGallery";
+import { getPropertyImages } from "@/lib/getPropertyImages";
 
 interface PageProps {
   params: Promise<{ id: string }>;
@@ -15,16 +17,17 @@ export default async function PropertyDetailPage({ params }: PageProps) {
     notFound();
   }
 
+  const images = property.galleryFolder
+    ? getPropertyImages(property.galleryFolder)
+    : [];
+
   return (
     <>
-      {/* Large gradient image */}
-      <div
-        className="w-full"
-        style={{
-          height: "400px",
-          background: property.gradient,
-          marginTop: "80px",
-        }}
+      {/* Gallery / hero */}
+      <PropertyGallery
+        images={images}
+        title={property.title}
+        gradient={property.gradient}
       />
 
       <div className="max-w-5xl mx-auto px-4 md:px-8 py-12">
@@ -56,6 +59,8 @@ export default async function PropertyDetailPage({ params }: PageProps) {
                       ? "bg-green-100 text-green-700"
                       : property.status === "en_proceso"
                       ? "bg-yellow-100 text-yellow-700"
+                      : property.status === "pre_venta"
+                      ? "bg-blue-100 text-blue-700"
                       : "bg-gray-100 text-gray-700"
                   }`}
                 >
@@ -63,6 +68,8 @@ export default async function PropertyDetailPage({ params }: PageProps) {
                     ? "Disponible"
                     : property.status === "en_proceso"
                     ? "En Proceso"
+                    : property.status === "pre_venta"
+                    ? "Pre-venta"
                     : "Vendido"}
                 </span>
               </div>
@@ -119,7 +126,7 @@ export default async function PropertyDetailPage({ params }: PageProps) {
             <ul className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-8">
               {property.features.map((f) => (
                 <li key={f} className="flex items-start gap-2.5 text-sm text-[#4a4a4a]">
-                  <CheckCircle size={16} className="text-[#c9a96e] flex-shrink-0 mt-0.5" />
+                  <CheckCircle size={16} className="text-[#c9a96e] shrink-0 mt-0.5" />
                   {f}
                 </li>
               ))}

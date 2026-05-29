@@ -4,8 +4,13 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { MapPin, Bed, Bath, ArrowRight } from "lucide-react";
 import { properties } from "@/data/properties";
+import PropertyImageSlider from "@/components/PropertyImageSlider";
 
-export default function PropertiesSection() {
+interface PropertiesSectionProps {
+  imagesMap?: Record<string, string[]>;
+}
+
+export default function PropertiesSection({ imagesMap = {} }: PropertiesSectionProps) {
   const featured = properties.slice(0, 3);
 
   return (
@@ -46,12 +51,23 @@ export default function PropertiesSection() {
               whileHover={{ y: -6, transition: { duration: 0.2 } }}
               className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 group"
             >
-              {/* Image placeholder */}
+              {/* Image / Slider */}
               <div className="relative h-52 overflow-hidden">
-                <div
-                  className="w-full h-full"
-                  style={{ background: property.gradient }}
-                />
+                {(() => {
+                  const imgs = imagesMap[property.id] ?? [];
+                  return imgs.length > 0 ? (
+                    <PropertyImageSlider
+                      images={imgs}
+                      title={property.title}
+                      fallbackGradient={property.gradient}
+                    />
+                  ) : (
+                    <div
+                      className="w-full h-full"
+                      style={{ background: property.gradient }}
+                    />
+                  );
+                })()}
                 {/* Price overlay */}
                 <div className="absolute bottom-3 left-3 bg-[#c9a96e] text-white text-sm font-bold px-3 py-1 rounded">
                   {property.price}
@@ -63,6 +79,8 @@ export default function PropertiesSection() {
                       ? "bg-green-500 text-white"
                       : property.status === "en_proceso"
                       ? "bg-yellow-500 text-white"
+                      : property.status === "pre_venta"
+                      ? "bg-blue-500 text-white"
                       : "bg-gray-500 text-white"
                   }`}
                 >
@@ -70,6 +88,8 @@ export default function PropertiesSection() {
                     ? "Disponible"
                     : property.status === "en_proceso"
                     ? "En Proceso"
+                    : property.status === "pre_venta"
+                    ? "Pre-venta"
                     : "Vendido"}
                 </div>
               </div>
