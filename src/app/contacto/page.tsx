@@ -102,7 +102,7 @@ export default function ContactoPage() {
             <div className="space-y-6 mb-10">
               {[
                 { icon: MapPin, label: "Dirección", text: "Chihuahua, Chihuahua, México" },
-                { icon: Phone, label: "Teléfono", text: "+52 614 000 0000" },
+                { icon: Phone, label: "Teléfono", text: "+52 614 246 0197" },
                 { icon: Mail, label: "Correo", text: "info@doblem.mx" },
                 { icon: Clock, label: "Horario", text: "Lun – Vie: 9:00 – 18:00 | Sáb: 9:00 – 14:00" },
               ].map((item) => {

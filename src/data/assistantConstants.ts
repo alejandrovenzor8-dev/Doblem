@@ -5,8 +5,14 @@
 
 export const COMPANY = {
   name: "DobleM Diseño y Construcción",
-  whatsapp: "526142243474",
-  phone: "+52 614 000 0000",
+  whatsapp: "5216142460197",
+  whatsappCarolina: "5216142460197",
+  whatsappIveth: "5216142235153",
+  phone: "+52 614 246 0197",
+  phoneCarolina: "+52 614 246 0197",
+  phoneIveth: "+52 614 223 5153",
+  contactNamePrimary: "Carolina Morales",
+  contactNameSecondary: "Iveth Ramos",
   email: "info@doblem.mx",
   address: "Chihuahua, Chihuahua, México",
   hours: "Lunes a Viernes: 9:00 AM – 7:00 PM\nSábados: 10:00 AM – 2:00 PM",

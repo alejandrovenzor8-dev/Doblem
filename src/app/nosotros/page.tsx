@@ -2,19 +2,29 @@ import { Award, TrendingUp, Shield, Heart } from "lucide-react";
 
 const team = [
   {
-    name: "Miguel Martínez",
+    name: "Jaime Mendoza",
     role: "Director General",
     gradient: "linear-gradient(135deg, #1a2744 0%, #2d4a7a 100%)",
   },
   {
-    name: "Ana Rodríguez",
-    role: "Directora de Diseño",
+    name: "Carolina Morales",
+    role: "Asesora de Ventas",
     gradient: "linear-gradient(135deg, #2a1a0e 0%, #5c3a1e 100%)",
   },
   {
-    name: "Carlos Vega",
-    role: "Gerente de Construcción",
+    name: "Blanca Simental",
+    role: "Coordinadora de Proyectos",
     gradient: "linear-gradient(135deg, #1a3a1a 0%, #2d5a2d 100%)",
+  },
+  {
+    name: "Iveth Ramos",
+    role: "Asesora de Ventas",
+    gradient: "linear-gradient(135deg, #0f2027 0%, #203a43 100%)",
+  },
+  {
+    name: "Monica Maynez",
+    role: "Gerente de Operaciones",
+    gradient: "linear-gradient(135deg, #2d1a2d 0%, #5a2d5a 100%)",
   },
 ];
 
@@ -157,10 +167,10 @@ export default function NosotrosPage() {
               className="text-4xl font-bold text-[#1a1a1a]"
               style={{ fontFamily: "var(--font-playfair, serif)" }}
             >
-              Nuestro Equipo Directivo
+              Nuestro Equipo
             </h2>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8 max-w-6xl mx-auto">
             {team.map((member) => (
               <div key={member.name} className="text-center">
                 <div
