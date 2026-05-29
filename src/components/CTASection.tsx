@@ -28,7 +28,7 @@ export default function CTASection() {
           className="text-white text-4xl md:text-5xl font-bold mb-5"
           style={{ fontFamily: "var(--font-playfair, serif)" }}
         >
-          ¿Tienes un Proyecto en Mente?
+          Construyamos Juntos tu Próximo Proyecto
         </motion.h2>
         <motion.p
           initial={{ opacity: 0, y: 20 }}
@@ -37,8 +37,8 @@ export default function CTASection() {
           transition={{ delay: 0.2 }}
           className="text-white/60 text-lg mb-10"
         >
-          Hablemos de tu visión. Nuestro equipo está listo para ayudarte a
-          convertirla en realidad con la calidad y el estilo que mereces.
+          Agenda una asesoría y conoce cómo podemos transformar tus ideas en 
+          espacios funcionales, modernos y de alto valor.
         </motion.p>
         <motion.div
           initial={{ opacity: 0, y: 20 }}

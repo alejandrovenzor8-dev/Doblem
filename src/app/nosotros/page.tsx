@@ -2,28 +2,38 @@ import { Award, TrendingUp, Shield, Heart } from "lucide-react";
 
 const team = [
   {
-    name: "Miguel Martínez",
+    name: "Jaime Mendoza",
     role: "Director General",
     gradient: "linear-gradient(135deg, #1a2744 0%, #2d4a7a 100%)",
   },
   {
-    name: "Ana Rodríguez",
-    role: "Directora de Diseño",
+    name: "Carolina Morales",
+    role: "Asesora de Ventas",
     gradient: "linear-gradient(135deg, #2a1a0e 0%, #5c3a1e 100%)",
   },
   {
-    name: "Carlos Vega",
-    role: "Gerente de Construcción",
+    name: "Blanca Simental",
+    role: "Coordinadora de Proyectos",
     gradient: "linear-gradient(135deg, #1a3a1a 0%, #2d5a2d 100%)",
+  },
+  {
+    name: "Iveth Ramos",
+    role: "Asesora de Ventas",
+    gradient: "linear-gradient(135deg, #0f2027 0%, #203a43 100%)",
+  },
+  {
+    name: "Monica Maynez",
+    role: "Gerente de Operaciones",
+    gradient: "linear-gradient(135deg, #2d1a2d 0%, #5a2d5a 100%)",
   },
 ];
 
 const milestones = [
-  { year: "2009", event: "Fundación de DobleM en Chihuahua" },
-  { year: "2013", event: "Expansión al mercado residencial premium" },
-  { year: "2017", event: "50 proyectos completados en Chihuahua" },
-  { year: "2020", event: "Lanzamiento del servicio de diseño personalizado" },
-  { year: "2023", event: "200+ clientes satisfechos, referente local" },
+  { year: "2017", event: "Fundación de Doble M. Diseño y Construcción en Chihuahua" },
+  { year: "2019", event: "Primeros proyectos residenciales premium" },
+  { year: "2021", event: "Expansión a obra pública" },
+  { year: "2023", event: "Consolidación como referente en diseño arquitectónico" },
+  { year: "2024", event: "Desarrollo y comercialización de inmuebles propios" },
 ];
 
 export default function NosotrosPage() {
@@ -52,54 +62,41 @@ export default function NosotrosPage() {
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-start">
           <div>
             <p className="text-[#c9a96e] text-sm font-semibold tracking-[0.3em] uppercase mb-3">
-              Nuestra Historia (Fuente Actual)
+              Quiénes Somos
             </p>
             <h2
               className="text-4xl font-bold text-[#1a1a1a] mb-6"
               style={{ fontFamily: "var(--font-playfair, serif)" }}
             >
-              15 Años Construyendo Sueños
+              Diseño y Construcción de Excelencia
             </h2>
             <p className="text-[#4a4a4a] leading-relaxed mb-4">
-              Fundada en 2009 en la ciudad de Chihuahua, DobleM nació con la
-              misión de transformar el mercado inmobiliario local ofreciendo
-              propiedades y servicios de construcción de la más alta calidad.
+              Doble M. Diseño y Construcción es una empresa mexicana con presencia en Chihuahua desde 2017, especializada en diseño arquitectónico, construcción, remodelación y mantenimiento integral de inmuebles.
             </p>
             <p className="text-[#4a4a4a] leading-relaxed mb-4">
-              A lo largo de 15 años, hemos completado más de 50 proyectos
-              residenciales y comerciales, ganando la confianza de más de 200
-              familias y empresas en Chihuahua.
+              Desarrollamos proyectos residenciales, residencial premium y obra pública, ofreciendo soluciones integrales con altos estándares de calidad, funcionalidad y eficiencia.
             </p>
             <p className="text-[#4a4a4a] leading-relaxed">
-              Nuestro compromiso con la excelencia, la transparencia y la
-              atención personalizada nos posiciona como el referente en diseño
-              y construcción premium en la región.
+              Contamos con la capacidad técnica, operativa y administrativa para desarrollar proyectos de construcción y arquitectura de distinta escala, garantizando calidad constructiva, cumplimiento operativo y excelencia en cada etapa de ejecución.
             </p>
           </div>
           <div
-            className="rounded-2xl border border-[#ede8dc] p-6 lg:p-8"
-            style={{ fontFamily: '"Times New Roman", Times, serif' }}
+            className="rounded-2xl border border-[#ede8dc] p-6 lg:p-8 bg-[#f5f0e8]"
           >
             <p className="text-[#c9a96e] text-sm font-semibold tracking-[0.3em] uppercase mb-3">
-              Nuestra Historia (Times New Roman)
+              Capacidad Operativa
             </p>
-            <h2 className="text-4xl font-bold text-[#1a1a1a] mb-6">
-              15 Años Construyendo Sueños
+            <h2
+              className="text-3xl font-bold text-[#1a1a1a] mb-6"
+              style={{ fontFamily: "var(--font-playfair, serif)" }}
+            >
+              Experiencia y Profesionalismo
             </h2>
             <p className="text-[#4a4a4a] leading-relaxed mb-4">
-              Fundada en 2009 en la ciudad de Chihuahua, DobleM nació con la
-              misión de transformar el mercado inmobiliario local ofreciendo
-              propiedades y servicios de construcción de la más alta calidad.
-            </p>
-            <p className="text-[#4a4a4a] leading-relaxed mb-4">
-              A lo largo de 15 años, hemos completado más de 50 proyectos
-              residenciales y comerciales, ganando la confianza de más de 200
-              familias y empresas en Chihuahua.
+              Contamos con la capacidad técnica, operativa y administrativa para desarrollar proyectos de construcción y arquitectura de distinta escala.
             </p>
             <p className="text-[#4a4a4a] leading-relaxed">
-              Nuestro compromiso con la excelencia, la transparencia y la
-              atención personalizada nos posiciona como el referente en diseño
-              y construcción premium en la región.
+              Coordinamos de manera eficiente personal especializado, proveedores y subcontratistas para garantizar altos estándares de calidad constructiva, cumplimiento operativo y excelencia en cada etapa de ejecución.
             </p>
           </div>
         </div>
@@ -121,17 +118,17 @@ export default function NosotrosPage() {
               {
                 icon: Award,
                 title: "Misión",
-                text: "Ofrecer soluciones inmobiliarias y de construcción de excelencia que superen las expectativas de nuestros clientes, creando espacios que mejoren su calidad de vida.",
+                text: "Diseñar y ejecutar proyectos de construcción y arquitectura que integren innovación, calidad y solidez constructiva, garantizando el cumplimiento de tiempos, costos y especificaciones técnicas para crear espacios funcionales, estéticos y de alto valor para nuestros clientes.",
               },
               {
                 icon: TrendingUp,
                 title: "Visión",
-                text: "Ser la empresa líder en diseño y construcción premium en el norte de México, reconocida por nuestra innovación, calidad y compromiso con el cliente.",
+                text: "Consolidarnos como una empresa referente dentro del sector de la construcción y el diseño arquitectónico, reconocida por nuestra excelencia, capacidad técnica, cumplimiento e innovación en proyectos residenciales y de obra pública.",
               },
               {
                 icon: Shield,
                 title: "Valores",
-                text: "Integridad, excelencia, innovación, compromiso y responsabilidad social son los pilares sobre los que construimos cada proyecto.",
+                text: "Compromiso, calidad, innovación, responsabilidad, transparencia y excelencia constructiva son los pilares sobre los que construimos cada proyecto.",
               },
             ].map((item) => {
               const Icon = item.icon;
@@ -170,10 +167,10 @@ export default function NosotrosPage() {
               className="text-4xl font-bold text-[#1a1a1a]"
               style={{ fontFamily: "var(--font-playfair, serif)" }}
             >
-              Nuestro Equipo Directivo
+              Nuestro Equipo
             </h2>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8 max-w-6xl mx-auto">
             {team.map((member) => (
               <div key={member.name} className="text-center">
                 <div

@@ -5,27 +5,39 @@ import { motion } from "framer-motion";
 const steps = [
   {
     number: "01",
-    title: "Consulta Inicial",
+    title: "Asesoría y Análisis",
     description:
-      "Conversamos sobre tus necesidades, presupuesto y visión del proyecto para entender exactamente qué estás buscando.",
+      "Analizamos tus necesidades, presupuesto y visión del proyecto para entender exactamente lo que buscas y ofrecer la mejor solución.",
   },
   {
     number: "02",
-    title: "Diseño y Planificación",
+    title: "Diseño y Planeación",
     description:
-      "Nuestro equipo de arquitectos y diseñadores crea el proyecto detallado con renders 3D y presupuesto final.",
+      "Desarrollamos el diseño arquitectónico personalizado con documentación técnica completa y planeación detallada del proyecto.",
   },
   {
     number: "03",
-    title: "Construcción",
+    title: "Presupuesto y Programación",
     description:
-      "Ejecutamos el proyecto con los más altos estándares, informándote del avance en cada etapa con total transparencia.",
+      "Elaboramos presupuesto detallado y programación de obra con tiempos definidos, asegurando transparencia en costos y procesos.",
   },
   {
     number: "04",
-    title: "Entrega",
+    title: "Ejecución y Supervisión",
     description:
-      "Hacemos entrega formal de tu proyecto terminado, con garantía y servicio post-venta para tu total satisfacción.",
+      "Ejecutamos la construcción con supervisión profesional constante, garantizando calidad constructiva y cumplimiento de especificaciones.",
+  },
+  {
+    number: "05",
+    title: "Control de Calidad",
+    description:
+      "Control riguroso de calidad en materiales, procesos constructivos y acabados para asegurar los más altos estándares.",
+  },
+  {
+    number: "06",
+    title: "Entrega Final",
+    description:
+      "Entrega formal del proyecto terminado con documentación completa, garantía y seguimiento continuo para tu total satisfacción.",
   },
 ];
 
@@ -59,15 +71,15 @@ export default function ProcessSection() {
         <div className="hidden md:block">
           {/* Connecting line */}
           <div className="relative">
-            <div className="absolute top-10 left-0 right-0 h-0.5 bg-[#ede8dc] mx-16" />
-            <div className="grid grid-cols-4 gap-6">
+            <div className="absolute top-10 left-0 right-0 h-0.5 bg-[#ede8dc] mx-8" />
+            <div className="grid grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-6">
               {steps.map((step, i) => (
                 <motion.div
                   key={step.number}
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: i * 0.12 }}
+                  transition={{ duration: 0.5, delay: i * 0.1 }}
                   className="relative text-center"
                 >
                   {/* Circle */}

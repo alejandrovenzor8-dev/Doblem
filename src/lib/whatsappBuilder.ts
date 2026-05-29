@@ -1,15 +1,30 @@
 // ─────────────────────────────────────────────────────────────────────────────
 // WhatsApp Message Builder
 // Generates a pre-filled wa.me URL from the captured lead data.
+// Automatically alternates between Carolina Morales and Iveth Ramos.
 // ─────────────────────────────────────────────────────────────────────────────
 
-import { WHATSAPP_BASE_URL } from "@/data/assistantConstants";
+import { COMPANY } from "@/data/assistantConstants";
+import { getNextAdvisor } from "@/lib/assistantStorage";
 import type { LeadData } from "@/types/assistant";
 
-/** Returns a wa.me URL with a pre-filled summary message */
+/**
+ * Returns a wa.me URL with a pre-filled summary message.
+ * Automatically alternates between advisors on each call.
+ */
 export function buildWhatsAppUrl(data: LeadData): string {
+  // Determine which advisor gets this lead
+  const advisorIndex = getNextAdvisor();
+  const whatsappNumber = advisorIndex === 0 
+    ? COMPANY.whatsappCarolina 
+    : COMPANY.whatsappIveth;
+  
+  const advisorName = advisorIndex === 0 
+    ? COMPANY.contactNamePrimary 
+    : COMPANY.contactNameSecondary;
+
   const lines: string[] = [
-    `Hola DobleM, me contacté a través del asistente virtual y me gustaría más información.`,
+    `Hola ${advisorName}, me contacté a través del asistente virtual y me gustaría más información.`,
     ``,
     `*Mi perfil:*`,
   ];
@@ -48,5 +63,5 @@ export function buildWhatsAppUrl(data: LeadData): string {
   }
 
   const message = lines.join("\n");
-  return `${WHATSAPP_BASE_URL}?text=${encodeURIComponent(message)}`;
+  return `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
 }

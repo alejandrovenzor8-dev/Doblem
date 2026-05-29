@@ -6,35 +6,35 @@ import { Award, Shield, CheckCircle, Heart } from "lucide-react";
 const differentiators = [
   {
     icon: Award,
-    title: "Experiencia Comprobada",
+    title: "Supervisión Profesional",
     description:
-      "15 años en el mercado inmobiliario de Chihuahua avalan nuestra trayectoria y conocimiento del sector.",
+      "Supervisión profesional en cada etapa del proyecto, garantizando calidad constructiva y cumplimiento de especificaciones técnicas.",
   },
   {
     icon: Shield,
-    title: "Calidad Premium",
+    title: "Calidad Constructiva Premium",
     description:
-      "Utilizamos materiales de primera clase y trabajamos con los mejores proveedores para garantizar resultados excepcionales.",
+      "Calidad constructiva y acabados de alto nivel con materiales de primera clase y procesos constructivos eficientes.",
   },
   {
     icon: CheckCircle,
-    title: "Proceso Transparente",
+    title: "Transparencia Total",
     description:
-      "Sin sorpresas ni costos ocultos. Te acompañamos en cada etapa con total claridad y comunicación abierta.",
+      "Transparencia en procesos, tiempos y costos. Te mantenemos informado en cada etapa con comunicación clara y abierta.",
   },
   {
     icon: Heart,
     title: "Atención Personalizada",
     description:
-      "Cada cliente es único. Te ofrecemos asesoría dedicada para encontrar la solución perfecta a tus necesidades.",
+      "Atención personalizada y acompañamiento continuo desde la planeación hasta la entrega final de tu proyecto.",
   },
 ];
 
 const stats = [
-  { value: "50+", label: "Proyectos Completados" },
-  { value: "15", label: "Años de Experiencia" },
-  { value: "200+", label: "Clientes Satisfechos" },
-  { value: "98%", label: "Tasa de Satisfacción" },
+  { value: "2017", label: "Año de Fundación" },
+  { value: "3", label: "Sectores de Experiencia" },
+  { value: "100%", label: "Compromiso con Calidad" },
+  { value: "24/7", label: "Soporte y Seguimiento" },
 ];
 
 export default function WhyDobleM() {

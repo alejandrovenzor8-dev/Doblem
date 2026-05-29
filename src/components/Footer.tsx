@@ -11,11 +11,11 @@ const quickLinks = [
 ];
 
 const servicios = [
-  { label: "Venta de Inmuebles", href: "/servicios" },
-  { label: "Construcción Residencial", href: "/servicios" },
-  { label: "Diseño Personalizado", href: "/servicios" },
+  { label: "Diseño y Construcción", href: "/servicios" },
+  { label: "Obra Pública y Privada", href: "/servicios" },
+  { label: "Remodelaciones", href: "/servicios" },
+  { label: "Desarrollo Inmobiliario", href: "/propiedades" },
   { label: "Cotización", href: "/cotizacion" },
-  { label: "Comparador", href: "/comparador" },
 ];
 
 export default function Footer() {
@@ -37,8 +37,7 @@ export default function Footer() {
               </span>
             </Link>
             <p className="text-[#8a8a8a] text-sm leading-relaxed mb-6">
-              Empresa líder en inmuebles premium y construcción residencial en
-              Chihuahua, México. 15 años construyendo sueños.
+              Empresa especializada en diseño arquitectónico, construcción y desarrollo de inmuebles premium en Chihuahua, México. Desde 2017.
             </p>
             <div className="flex gap-3">
               <a
@@ -56,7 +55,7 @@ export default function Footer() {
                 <Share2 size={16} />
               </a>
               <a
-                href="https://wa.me/526142243474"
+                href="https://wa.me/5216142460197"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-9 h-9 bg-[#1a1a1a] rounded-full flex items-center justify-center hover:bg-[#25D366] transition-colors"
@@ -120,10 +119,10 @@ export default function Footer() {
               <li className="flex items-center gap-3">
                 <Phone size={16} className="text-[#c9a96e] flex-shrink-0" />
                 <a
-                  href="tel:+526142243474"
+                  href="tel:+5216142460197"
                   className="text-[#8a8a8a] text-sm hover:text-[#c9a96e] transition-colors"
                 >
-                  +52 614 000 0000
+                  +52 614 246 0197
                 </a>
               </li>
               <li className="flex items-center gap-3">

@@ -19,7 +19,7 @@ interface WhatsAppButtonProps {
 }
 
 export default function WhatsAppButtonPremium({
-  phoneNumber = "5216141234567",
+  phoneNumber = "5216142460197",
   message = "Hola, me interesa obtener más información",
   position = "bottom-right",
   showTooltip = true,
