@@ -5,7 +5,8 @@
 import { useState, useEffect } from 'react';
 import { useInView } from 'react-intersection-observer';
 import { useScroll, useTransform, type MotionValue } from 'framer-motion';
-import { TIMING, EASING, type Variants } from '@/lib/animation-config';
+import { TIMING, EASING } from '@/lib/animation-config';
+import type { Variants } from 'framer-motion';
 
 /**
  * Hook para detectar preferencias de movimiento reducido
