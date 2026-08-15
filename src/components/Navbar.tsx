@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 
@@ -37,22 +38,29 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 md:px-8 lg:px-16">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Link href="/" className="flex flex-col leading-none">
-            <span
-              className={`text-2xl font-bold tracking-tight transition-colors duration-300 ${
-                scrolled ? "text-[#1a1a1a]" : "text-white"
+          <Link
+            href="/"
+            aria-label="Doble M Diseño y Construcción"
+            className="flex items-center gap-2.5"
+          >
+            <Image
+              src="/logo-doblem-symbol.png"
+              alt=""
+              width={939}
+              height={822}
+              priority
+              className="h-11 w-auto flex-shrink-0"
+            />
+            <Image
+              src="/logo-doblem-wordmark.png"
+              alt="Doble M Diseño y Construcción"
+              width={1610}
+              height={484}
+              priority
+              className={`h-auto w-[118px] sm:w-[138px] transition-[filter] duration-300 ${
+                scrolled ? "" : "brightness-0 invert"
               }`}
-              style={{ fontFamily: "var(--font-playfair, serif)" }}
-            >
-              Doble<span className="text-[#c9a96e]">M</span>
-            </span>
-            <span
-              className={`text-[10px] tracking-[0.2em] uppercase transition-colors duration-300 ${
-                scrolled ? "text-[#8a8a8a]" : "text-[#c9a96e]"
-              }`}
-            >
-              Diseño y Construcción
-            </span>
+            />
           </Link>
 
           {/* Desktop Nav */}

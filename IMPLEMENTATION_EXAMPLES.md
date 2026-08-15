@@ -200,8 +200,8 @@ import {
 } from "@/lib/animation-config";
 
 const stats = [
-  { value: "50+", label: "Proyectos" },
-  { value: "15", label: "Años de Experiencia" },
+  { value: "70", label: "Proyectos Realizados" },
+  { value: "10", label: "Años de Experiencia" },
   { value: "200+", label: "Clientes Satisfechos" },
   { value: "Chihuahua", label: "México" },
 ];
@@ -269,7 +269,7 @@ export default function Hero() {
           variants={fadeInBlur}
           className="text-lg md:text-xl text-white/70 max-w-2xl mb-10"
         >
-          Más de 15 años creando proyectos arquitectónicos de lujo en Chihuahua.
+          10 años de experiencia y 70 proyectos realizados en Chihuahua.
           Diseño, construcción y remodelación con los más altos estándares.
         </motion.p>
 

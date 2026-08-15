@@ -44,7 +44,7 @@ const inter = Inter({
 // Metadata para SEO
 export const metadata: Metadata = {
   title: "DobleM Diseño y Construcción | Arquitectura Premium en Chihuahua",
-  description: "Más de 15 años creando proyectos arquitectónicos de lujo. Diseño, construcción y remodelación con los más altos estándares.",
+  description: "10 años creando proyectos arquitectónicos de lujo y 70 proyectos realizados. Diseño, construcción y remodelación con los más altos estándares.",
   keywords: ["arquitectura", "construcción", "diseño", "chihuahua", "bienes raíces", "propiedades premium"],
   openGraph: {
     title: "DobleM Diseño y Construcción",

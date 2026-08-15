@@ -18,8 +18,8 @@ const item: Variants = {
 };
 
 const stats = [
-  { value: "50+", label: "Proyectos" },
-  { value: "15", label: "Años de Experiencia" },
+  { value: "70", label: "Proyectos Realizados" },
+  { value: "10", label: "Años de Experiencia" },
   { value: "200+", label: "Clientes Satisfechos" },
   { value: "Chihuahua", label: "México" },
 ];
@@ -82,7 +82,7 @@ export default function Hero() {
               variants={item}
               className="text-[#c9a96e] text-sm font-semibold tracking-[0.3em] uppercase mb-6"
             >
-              Chihuahua, México · Desde 2009
+              Chihuahua, México · 10 años de experiencia
             </motion.p>
 
             <motion.h1
@@ -105,7 +105,7 @@ export default function Hero() {
               style={{ fontStyle: "italic" }}
             >
               Inmuebles premium, construcción residencial y diseño personalizado con
-              15 años de excelencia en Chihuahua.
+              10 años de excelencia en Chihuahua.
             </motion.p>
 
             <motion.div variants={item} className="flex flex-wrap gap-4">

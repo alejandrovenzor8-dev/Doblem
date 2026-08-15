@@ -8,7 +8,7 @@ import VirtualAssistant from "@/components/assistant/VirtualAssistant";
 export const metadata: Metadata = {
   title: "DobleM Diseño y Construcción | Inmuebles Premium en Chihuahua",
   description:
-    "DobleM Diseño y Construcción: empresa líder en venta de inmuebles premium, construcción residencial y diseño personalizado en Chihuahua, México. 15 años de experiencia.",
+    "DobleM Diseño y Construcción: empresa líder en venta de inmuebles premium, construcción residencial y diseño personalizado en Chihuahua, México. 10 años de experiencia y 70 proyectos realizados.",
   keywords:
     "inmuebles, casas, construcción, diseño, Chihuahua, México, DobleM, propiedades premium",
   openGraph: {

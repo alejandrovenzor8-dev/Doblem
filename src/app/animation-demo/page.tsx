@@ -44,7 +44,7 @@ export default function AnimationDemo() {
   const [showModal, setShowModal] = useState(false);
   const [buttonState, setButtonState] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
   const prefersReducedMotion = usePrefersReducedMotion();
-  const { ref: counterRef, count } = useAnimatedCounter(150, 2000);
+  const { ref: counterRef, count } = useAnimatedCounter(70, 2000);
 
   return (
     <div className="min-h-screen bg-gray-50 py-20">
@@ -348,8 +348,8 @@ export default function AnimationDemo() {
               viewport={{ once: true }}
               className="inline-block p-12 bg-gradient-to-br from-[#c9a96e] to-[#d4af6a] rounded-2xl text-white"
             >
-              <div className="text-6xl font-bold mb-2">{count}+</div>
-              <div className="text-xl">Proyectos Completados</div>
+              <div className="text-6xl font-bold mb-2">{count}</div>
+              <div className="text-xl">Proyectos Realizados</div>
             </motion.div>
           </div>
         </section>

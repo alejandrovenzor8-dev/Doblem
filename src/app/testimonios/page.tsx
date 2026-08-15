@@ -12,8 +12,8 @@ const testimonials = [
 const stats = [
   { value: "200+", label: "Clientes Satisfechos" },
   { value: "98%", label: "Tasa de Satisfacción" },
-  { value: "50+", label: "Proyectos Completados" },
-  { value: "15", label: "Años de Experiencia" },
+  { value: "70", label: "Proyectos Realizados" },
+  { value: "10", label: "Años de Experiencia" },
 ];
 
 export default function TestimoniosPage() {
