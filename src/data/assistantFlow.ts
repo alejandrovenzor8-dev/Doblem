@@ -513,7 +513,7 @@ export const FLOW_STEPS: Record<string, FlowStep> = {
         label: "Servicios",
         emoji: "🏗️",
         content:
-          "Ofrecemos:\n\n• Venta de propiedades premium\n• Construcción residencial desde cero\n• Diseño arquitectónico personalizado\n• Remodelaciones y ampliaciones\n• Asesoría en inversión inmobiliaria\n• Gestión de trámites y permisos",
+          "Ofrecemos:\n\n• Venta de propiedades premium\n• Construcción residencial desde cero\n• Diseño arquitectónico personalizado\n• Tramitología y gestión de permisos\n• Remodelaciones y ampliaciones\n• Asesoría en inversión inmobiliaria",
         ctaLabel: "Iniciar consulta",
         ctaAction: "restart",
       },

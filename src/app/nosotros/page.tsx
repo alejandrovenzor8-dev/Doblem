@@ -1,4 +1,4 @@
-import { Award, TrendingUp, Shield, Heart } from "lucide-react";
+import { Award, TrendingUp, Shield } from "lucide-react";
 
 const team = [
   {
@@ -34,6 +34,16 @@ const milestones = [
   { year: "2021", event: "Expansión a obra pública" },
   { year: "2023", event: "Consolidación como referente en diseño arquitectónico" },
   { year: "2024", event: "Desarrollo y comercialización de inmuebles propios" },
+  {
+    year: "2025",
+    event:
+      "Nos consolidamos como un referente en el desarrollo de residencias premium en la zona de mayor crecimiento de la ciudad de Chihuahua.",
+  },
+  {
+    year: "2026",
+    event:
+      "Incursionamos en el desarrollo de vivienda vertical con nuestro nuevo proyecto en Torre M, Zona Reliz.",
+  },
 ];
 
 export default function NosotrosPage() {
@@ -68,16 +78,19 @@ export default function NosotrosPage() {
               className="text-4xl font-bold text-[#1a1a1a] mb-6"
               style={{ fontFamily: "var(--font-playfair, serif)" }}
             >
-              Diseño y Construcción de Excelencia
+              Construimos con visión. Diseñamos con propósito.
             </h2>
             <p className="text-[#4a4a4a] leading-relaxed mb-4">
-              Doble M. Diseño y Construcción es una empresa mexicana con presencia en Chihuahua desde 2017, especializada en diseño arquitectónico, construcción, remodelación y mantenimiento integral de inmuebles.
+              Desde 2017, Doble M. Diseño y Construcción desarrolla proyectos de arquitectura, construcción, remodelación y mantenimiento integral, ofreciendo soluciones que conjugan diseño, funcionalidad y excelencia constructiva.
             </p>
             <p className="text-[#4a4a4a] leading-relaxed mb-4">
-              Desarrollamos proyectos residenciales, residencial premium y obra pública, ofreciendo soluciones integrales con altos estándares de calidad, funcionalidad y eficiencia.
+              Con presencia en Chihuahua y experiencia en los sectores residencial, residencial premium y obra pública, contamos con una estructura técnica, operativa y administrativa capaz de llevar cada proyecto desde su planeación hasta su ejecución, manteniendo un control preciso de calidad, costos, tiempos y especificaciones.
+            </p>
+            <p className="text-[#4a4a4a] leading-relaxed mb-4">
+              Nuestro trabajo se distingue por la atención al detalle, el compromiso y la capacidad de convertir las necesidades de cada cliente en soluciones arquitectónicas y constructivas de alto valor.
             </p>
             <p className="text-[#4a4a4a] leading-relaxed">
-              Contamos con la capacidad técnica, operativa y administrativa para desarrollar proyectos de construcción y arquitectura de distinta escala, garantizando calidad constructiva, cumplimiento operativo y excelencia en cada etapa de ejecución.
+              En Doble M. construimos espacios pensados para perdurar.
             </p>
           </div>
           <div

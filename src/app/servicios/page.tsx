@@ -9,6 +9,7 @@ const services = [
     gradient: "linear-gradient(135deg, #1a2744 0%, #2d4a7a 100%)",
     features: [
       "Diseño arquitectónico personalizado",
+      "Tramitología y gestión de permisos",
       "Construcción residencial y residencial premium",
       "Supervisión profesional constante",
       "Cumplimiento de tiempos y presupuestos",
