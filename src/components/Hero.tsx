@@ -82,7 +82,7 @@ export default function Hero() {
               variants={item}
               className="text-[#c9a96e] text-sm font-semibold tracking-[0.3em] uppercase mb-6"
             >
-              Chihuahua, México · 10 años de experiencia
+              Chihuahua, México · Desde 2017
             </motion.p>
 
             <motion.h1

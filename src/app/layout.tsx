@@ -6,6 +6,7 @@ import WhatsAppButton from "@/components/WhatsAppButton";
 import VirtualAssistant from "@/components/assistant/VirtualAssistant";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.xn--doblemdiseoyconstruccion-9kc.com"),
   title: "DobleM Diseño y Construcción | Inmuebles Premium en Chihuahua",
   description:
     "DobleM Diseño y Construcción: empresa líder en venta de inmuebles premium, construcción residencial y diseño personalizado en Chihuahua, México. 10 años de experiencia y 70 proyectos realizados.",
