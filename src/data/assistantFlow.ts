@@ -7,6 +7,7 @@
 // ─────────────────────────────────────────────────────────────────────────────
 
 import type { FlowStep } from "@/types/assistant";
+import { COMPANY } from "@/data/assistantConstants";
 
 /** Entry point — always start here */
 export const INITIAL_STEP_ID = "welcome";
@@ -522,7 +523,7 @@ export const FLOW_STEPS: Record<string, FlowStep> = {
         label: "Ubicación",
         emoji: "📍",
         content:
-          "Estamos en Chihuahua, Chihuahua, México. Atendemos proyectos en toda la ciudad y sus alrededores. Nos desplazamos al sitio de tu proyecto sin costo adicional.",
+          `Estamos en ${COMPANY.address}. Atendemos proyectos en toda la ciudad y sus alrededores. Nos desplazamos al sitio de tu proyecto sin costo adicional.`,
         ctaLabel: "Hablar por WhatsApp",
         ctaAction: "whatsapp",
       },
@@ -543,7 +544,7 @@ export const FLOW_STEPS: Record<string, FlowStep> = {
         label: "¿Dónde están ubicados?",
         emoji: "📍",
         content:
-          "Estamos en Chihuahua, Chihuahua, México. Atendemos proyectos residenciales y comerciales en toda la ciudad y sus alrededores.",
+          `Estamos en ${COMPANY.address}. Atendemos proyectos residenciales y comerciales en toda la ciudad y sus alrededores.`,
         ctaLabel: "Hablar por WhatsApp",
         ctaAction: "whatsapp",
       },

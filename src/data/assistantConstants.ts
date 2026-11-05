@@ -14,7 +14,10 @@ export const COMPANY = {
   contactNamePrimary: "Carolina Morales",
   contactNameSecondary: "Iveth Ramos",
   email: "info@doblem.mx",
-  address: "Chihuahua, Chihuahua, México",
+  address:
+    "Torre Azenzo, Paseos Vista del Sol 6803, Piso 16, Torre A, Oficina 02, Chihuahua, Chihuahua, C.P. 31207",
+  mapsUrl:
+    "https://www.google.com/maps/search/?api=1&query=Torre%20Azenzo%2C%20Paseos%20Vista%20del%20Sol%206803%2C%20Piso%2016%2C%20Torre%20A%2C%20Oficina%2002%2C%20Chihuahua%2C%20Chihuahua%2C%2031207",
   hours: "Lunes a Viernes: 9:00 AM – 7:00 PM\nSábados: 10:00 AM – 2:00 PM",
   propertiesUrl: "/propiedades",
   scheduleUrl: "/agenda",

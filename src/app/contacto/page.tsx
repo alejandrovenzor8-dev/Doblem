@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
+import { COMPANY } from "@/data/assistantConstants";
 
 export default function ContactoPage() {
   const [form, setForm] = useState({ nombre: "", correo: "", telefono: "", mensaje: "" });
@@ -101,7 +102,7 @@ export default function ContactoPage() {
             </h2>
             <div className="space-y-6 mb-10">
               {[
-                { icon: MapPin, label: "Dirección", text: "Chihuahua, Chihuahua, México" },
+                { icon: MapPin, label: "Dirección", text: COMPANY.address },
                 { icon: Phone, label: "Teléfono", text: "+52 614 246 0197" },
                 { icon: Mail, label: "Correo", text: "info@doblem.mx" },
                 { icon: Clock, label: "Horario", text: "Lun – Vie: 9:00 – 18:00 | Sáb: 9:00 – 14:00" },
@@ -122,7 +123,11 @@ export default function ContactoPage() {
             </div>
 
             {/* Map placeholder */}
-            <div
+            <a
+              href={COMPANY.mapsUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Abrir ubicación de Doble M en Google Maps"
               className="rounded-2xl overflow-hidden flex items-center justify-center"
               style={{
                 height: "250px",
@@ -131,10 +136,10 @@ export default function ContactoPage() {
             >
               <div className="text-center text-white">
                 <MapPin size={32} className="mx-auto mb-2 opacity-80" />
-                <p className="font-semibold">Chihuahua, México</p>
+                <p className="font-semibold">Torre Azenzo, Chihuahua</p>
                 <p className="text-white/60 text-sm">Ver en Google Maps</p>
               </div>
-            </div>
+            </a>
           </div>
         </div>
       </section>

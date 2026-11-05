@@ -4,6 +4,26 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import VirtualAssistant from "@/components/assistant/VirtualAssistant";
+import { COMPANY } from "@/data/assistantConstants";
+
+const localBusinessJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  name: COMPANY.name,
+  url: "https://www.xn--doblemdiseoyconstruccion-9kc.com",
+  telephone: COMPANY.phone,
+  email: COMPANY.email,
+  address: {
+    "@type": "PostalAddress",
+    streetAddress:
+      "Torre Azenzo, Paseos Vista del Sol 6803, Piso 16, Torre A, Oficina 02",
+    addressLocality: "Chihuahua",
+    addressRegion: "Chihuahua",
+    postalCode: "31207",
+    addressCountry: "MX",
+  },
+  sameAs: [COMPANY.instagramUrl, COMPANY.facebookUrl],
+};
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.xn--doblemdiseoyconstruccion-9kc.com"),
@@ -37,6 +57,12 @@ export default function RootLayout({
         />
       </head>
       <body>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(localBusinessJsonLd).replace(/</g, "\\u003c"),
+          }}
+        />
         <Navbar />
         <main>{children}</main>
         <Footer />

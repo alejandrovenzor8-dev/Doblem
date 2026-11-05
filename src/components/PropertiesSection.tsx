@@ -5,13 +5,15 @@ import { motion } from "framer-motion";
 import { MapPin, Bed, Bath, ArrowRight } from "lucide-react";
 import { properties } from "@/data/properties";
 import PropertyImageSlider from "@/components/PropertyImageSlider";
+import PropertyStatusBadge from "@/components/PropertyStatusBadge";
 
 interface PropertiesSectionProps {
   imagesMap?: Record<string, string[]>;
 }
 
 export default function PropertiesSection({ imagesMap = {} }: PropertiesSectionProps) {
-  const featured = properties.slice(0, 3);
+  const featured = properties
+    .filter((property) => property.status !== "vendido");
 
   return (
     <section className="py-20 px-4 md:px-8 lg:px-16 bg-[#f5f0e8]">
@@ -68,30 +70,13 @@ export default function PropertiesSection({ imagesMap = {} }: PropertiesSectionP
                     />
                   );
                 })()}
-                {/* Price overlay */}
                 <div className="absolute bottom-3 left-3 bg-[#c9a96e] text-white text-sm font-bold px-3 py-1 rounded">
                   {property.price}
                 </div>
-                {/* Status badge */}
-                <div
-                  className={`absolute top-3 right-3 text-xs font-semibold px-2.5 py-1 rounded-full ${
-                    property.status === "disponible"
-                      ? "bg-green-500 text-white"
-                      : property.status === "en_proceso"
-                      ? "bg-yellow-500 text-white"
-                      : property.status === "pre_venta"
-                      ? "bg-blue-500 text-white"
-                      : "bg-gray-500 text-white"
-                  }`}
-                >
-                  {property.status === "disponible"
-                    ? "Disponible"
-                    : property.status === "en_proceso"
-                    ? "En Proceso"
-                    : property.status === "pre_venta"
-                    ? "Pre-venta"
-                    : "Vendido"}
-                </div>
+                <PropertyStatusBadge
+                  status={property.status}
+                  className="absolute top-3 right-3 z-20"
+                />
               </div>
 
               {/* Content */}
@@ -107,7 +92,7 @@ export default function PropertiesSection({ imagesMap = {} }: PropertiesSectionP
                   {property.bedrooms > 0 && (
                     <div className="flex items-center gap-1.5">
                       <Bed size={15} className="text-[#c9a96e]" />
-                      <span>{property.bedrooms} hab</span>
+                      <span>{property.bedroomsLabel ?? property.bedrooms} hab</span>
                     </div>
                   )}
                   {property.bathrooms > 0 && (
@@ -117,7 +102,7 @@ export default function PropertiesSection({ imagesMap = {} }: PropertiesSectionP
                     </div>
                   )}
                   <div className="ml-auto text-[#8a8a8a]">
-                    {property.area} m²
+                    {property.areaLabel ?? property.area} m²
                   </div>
                 </div>
               </div>

@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { blogArticles } from "@/data/blog";
+import { properties } from "@/data/properties";
 
 const baseUrl = "https://www.xn--doblemdiseoyconstruccion-9kc.com";
 
@@ -16,7 +17,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/agenda",
   ].map((path) => ({
     url: `${baseUrl}${path}`,
-    lastModified: "2026-09-12",
+    lastModified: "2026-11-04",
     changeFrequency: path === "/blog" ? ("weekly" as const) : ("monthly" as const),
     priority: path === "" ? 1 : path === "/blog" ? 0.8 : 0.7,
   }));
@@ -29,5 +30,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     images: [`${baseUrl}${article.coverImage}`],
   }));
 
-  return [...pages, ...articles];
+  const propertyPages = properties.map((property) => ({
+    url: `${baseUrl}/propiedades/${property.id}`,
+    lastModified: "2026-11-04",
+    changeFrequency: "monthly" as const,
+    priority: property.status === "vendido" ? 0.5 : 0.8,
+  }));
+
+  return [...pages, ...propertyPages, ...articles];
 }

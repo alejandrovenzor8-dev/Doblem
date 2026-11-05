@@ -37,8 +37,7 @@ export default function ComparadorPage() {
       const map: Record<string, string> = {
         disponible: "Disponible",
         vendido: "Vendido",
-        en_proceso: "En Proceso",
-        pre_venta: "Pre-venta",
+        pre_venta: "Preventa",
       };
       return map[val as string] ?? String(val);
     }
@@ -126,7 +125,15 @@ export default function ComparadorPage() {
                       </td>
                       {selectedProps.map((p, i) => (
                         <td key={i} className="py-4 px-6 text-sm text-[#1a1a1a]">
-                          {p ? formatValue(row.key, p[row.key]) : "—"}
+                          {p
+                            ? row.key === "price" && p.status === "vendido"
+                              ? "No disponible"
+                              : row.key === "area" && p.areaLabel
+                              ? `${p.areaLabel} m²`
+                              : row.key === "bedrooms" && p.bedroomsLabel
+                              ? p.bedroomsLabel
+                              : formatValue(row.key, p[row.key])
+                            : "—"}
                         </td>
                       ))}
                     </tr>

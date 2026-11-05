@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Globe2, Share2, MessageCircle, Phone, Mail, MapPin } from "lucide-react";
+import { COMPANY } from "@/data/assistantConstants";
 
 const quickLinks = [
   { label: "Inicio", href: "/" },
@@ -112,9 +113,14 @@ export default function Footer() {
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
                 <MapPin size={16} className="text-[#c9a96e] mt-0.5 flex-shrink-0" />
-                <span className="text-[#8a8a8a] text-sm">
-                  Chihuahua, Chihuahua, México
-                </span>
+                <a
+                  href={COMPANY.mapsUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[#8a8a8a] text-sm hover:text-[#c9a96e] transition-colors"
+                >
+                  {COMPANY.address}
+                </a>
               </li>
               <li className="flex items-center gap-3">
                 <Phone size={16} className="text-[#c9a96e] flex-shrink-0" />

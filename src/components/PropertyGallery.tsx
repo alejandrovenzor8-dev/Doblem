@@ -2,17 +2,22 @@
 
 import { useState } from "react";
 import { ChevronLeft, ChevronRight, X, ZoomIn } from "lucide-react";
+import type { PropertyStatus } from "@/data/properties";
+import PropertyStatusBadge from "@/components/PropertyStatusBadge";
+import Image from "next/image";
 
 interface PropertyGalleryProps {
   images: string[];
   title: string;
   gradient: string;
+  status: PropertyStatus;
 }
 
 export default function PropertyGallery({
   images,
   title,
   gradient,
+  status,
 }: PropertyGalleryProps) {
   const [current, setCurrent] = useState(0);
   const [lightbox, setLightbox] = useState(false);
@@ -23,9 +28,11 @@ export default function PropertyGallery({
   if (!images || images.length === 0) {
     return (
       <div
-        className="w-full"
+        className="relative w-full"
         style={{ height: "400px", background: gradient, marginTop: "80px" }}
-      />
+      >
+        <PropertyStatusBadge status={status} className="absolute left-4 top-4 z-20" />
+      </div>
     );
   }
 
@@ -43,11 +50,12 @@ export default function PropertyGallery({
               i === current ? "opacity-100" : "opacity-0"
             }`}
           >
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
+            <Image
               src={src}
               alt={`${title} - imagen ${i + 1}`}
-              className="w-full h-full object-cover"
+              fill
+              sizes="100vw"
+              className="object-cover"
               loading={i === 0 ? "eager" : "lazy"}
             />
           </div>
@@ -55,6 +63,8 @@ export default function PropertyGallery({
 
         {/* Gradient overlay at bottom */}
         <div className="absolute inset-x-0 bottom-0 h-24 bg-linear-to-t from-black/60 to-transparent pointer-events-none" />
+
+        <PropertyStatusBadge status={status} className="absolute left-4 top-4 z-20" />
 
         {/* Counter */}
         <div className="absolute bottom-4 right-4 bg-black/50 text-white text-xs px-2.5 py-1 rounded-full z-10">
@@ -94,7 +104,7 @@ export default function PropertyGallery({
             <button
               key={src}
               onClick={() => setCurrent(i)}
-              className={`shrink-0 rounded overflow-hidden transition-all duration-200 ${
+              className={`relative shrink-0 rounded overflow-hidden transition-all duration-200 ${
                 i === current
                   ? "ring-2 ring-[#c9a96e] opacity-100"
                   : "opacity-50 hover:opacity-80"
@@ -102,12 +112,12 @@ export default function PropertyGallery({
               style={{ width: 64, height: 44 }}
               aria-label={`Ver imagen ${i + 1}`}
             >
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
+              <Image
                 src={src}
                 alt={`${title} miniatura ${i + 1}`}
-                className="w-full h-full object-cover"
-                loading="lazy"
+                fill
+                sizes="64px"
+                className="object-cover"
               />
             </button>
           ))}
@@ -135,15 +145,16 @@ export default function PropertyGallery({
             <ChevronLeft size={28} />
           </button>
           <div
-            className="flex items-center justify-center"
+            className="relative flex items-center justify-center"
             style={{ width: "min(90vw, 1000px)", height: "min(80vh, 700px)" }}
             onClick={(e) => e.stopPropagation()}
           >
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
+            <Image
               src={images[current]}
               alt={`${title} - imagen ${current + 1}`}
-              className="max-w-full max-h-full object-contain"
+              fill
+              sizes="90vw"
+              className="object-contain"
             />
           </div>
           <button

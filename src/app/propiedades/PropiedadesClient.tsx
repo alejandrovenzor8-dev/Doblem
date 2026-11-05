@@ -5,18 +5,21 @@ import Link from "next/link";
 import { MapPin, Bed, Bath, Search } from "lucide-react";
 import { properties, Property } from "@/data/properties";
 import PropertyImageSlider from "@/components/PropertyImageSlider";
+import PropertyStatusBadge from "@/components/PropertyStatusBadge";
 
 interface PropiedadesClientProps {
   imagesMap: Record<string, string[]>;
 }
 
 export default function PropiedadesClient({ imagesMap }: PropiedadesClientProps) {
-  const [tipo, setTipo] = useState<string>("todos");
+  const [estado, setEstado] = useState<string>("todos");
   const [habitaciones, setHabitaciones] = useState<string>("todos");
   const [precio, setPrecio] = useState<string>("todos");
 
   const filtered: Property[] = properties.filter((p) => {
-    if (tipo !== "todos" && p.type !== tipo) return false;
+    if (estado === "disponibles" && p.status === "vendido") return false;
+    if (estado === "pre_venta" && p.status !== "pre_venta") return false;
+    if (estado === "vendido" && p.status !== "vendido") return false;
     if (habitaciones !== "todos" && p.bedrooms < parseInt(habitaciones)) return false;
     if (precio === "bajo" && p.priceNum > 3000000) return false;
     if (precio === "medio" && (p.priceNum < 3000000 || p.priceNum > 5000000)) return false;
@@ -35,17 +38,22 @@ export default function PropiedadesClient({ imagesMap }: PropiedadesClientProps)
           </div>
 
           <div className="flex flex-wrap gap-3">
-            {["todos", "casa", "departamento", "terreno"].map((t) => (
+            {[
+              { value: "todos", label: "Todas" },
+              { value: "disponibles", label: "Disponibles" },
+              { value: "pre_venta", label: "Preventa" },
+              { value: "vendido", label: "Vendidas" },
+            ].map((option) => (
               <button
-                key={t}
-                onClick={() => setTipo(t)}
+                key={option.value}
+                onClick={() => setEstado(option.value)}
                 className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
-                  tipo === t
+                  estado === option.value
                     ? "bg-[#c9a96e] text-white"
                     : "border border-[#d4d4d4] text-[#4a4a4a] hover:border-[#c9a96e]"
                 }`}
               >
-                {t === "todos" ? "Todos" : t.charAt(0).toUpperCase() + t.slice(1)}
+                {option.label}
               </button>
             ))}
           </div>
@@ -103,28 +111,15 @@ export default function PropiedadesClient({ imagesMap }: PropiedadesClientProps)
                           style={{ background: property.gradient }}
                         />
                       )}
-                      <div className="absolute bottom-3 left-3 bg-[#c9a96e] text-white text-sm font-bold px-3 py-1 rounded">
-                        {property.price}
-                      </div>
-                      <div
-                        className={`absolute top-3 right-3 text-xs font-semibold px-2.5 py-1 rounded-full ${
-                          property.status === "disponible"
-                            ? "bg-green-500 text-white"
-                            : property.status === "en_proceso"
-                            ? "bg-yellow-500 text-white"
-                            : property.status === "pre_venta"
-                            ? "bg-blue-500 text-white"
-                            : "bg-gray-500 text-white"
-                        }`}
-                      >
-                        {property.status === "disponible"
-                          ? "Disponible"
-                          : property.status === "en_proceso"
-                          ? "En Proceso"
-                          : property.status === "pre_venta"
-                          ? "Pre-venta"
-                          : "Vendido"}
-                      </div>
+                      {property.status !== "vendido" && (
+                        <div className="absolute bottom-3 left-3 bg-[#c9a96e] text-white text-sm font-bold px-3 py-1 rounded">
+                          {property.price}
+                        </div>
+                      )}
+                      <PropertyStatusBadge
+                        status={property.status}
+                        className="absolute top-3 right-3 z-20"
+                      />
                     </div>
                     <div className="p-5">
                       <h3 className="font-bold text-[#1a1a1a] text-lg mb-2 line-clamp-1">
@@ -138,7 +133,7 @@ export default function PropiedadesClient({ imagesMap }: PropiedadesClientProps)
                         {property.bedrooms > 0 && (
                           <div className="flex items-center gap-1.5">
                             <Bed size={15} className="text-[#c9a96e]" />
-                            <span>{property.bedrooms} hab</span>
+                            <span>{property.bedroomsLabel ?? property.bedrooms} hab</span>
                           </div>
                         )}
                         {property.bathrooms > 0 && (
@@ -147,7 +142,9 @@ export default function PropiedadesClient({ imagesMap }: PropiedadesClientProps)
                             <span>{property.bathrooms} baños</span>
                           </div>
                         )}
-                        <div className="ml-auto text-[#8a8a8a]">{property.area} m²</div>
+                        <div className="ml-auto text-[#8a8a8a]">
+                          {property.areaLabel ?? property.area} m²
+                        </div>
                       </div>
                     </div>
                     <div className="px-5 pb-5">

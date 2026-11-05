@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useCallback } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import Image from "next/image";
 
 interface PropertyImageSliderProps {
   images: string[];
@@ -48,11 +49,12 @@ export default function PropertyImageSlider({
             i === current ? "opacity-100" : "opacity-0"
           }`}
         >
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
+          <Image
             src={src}
             alt={`${title} - imagen ${i + 1}`}
-            className="w-full h-full object-cover"
+            fill
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            className="object-cover"
             loading={i === 0 ? "eager" : "lazy"}
           />
         </div>
