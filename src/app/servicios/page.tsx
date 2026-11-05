@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { CheckCircle } from "lucide-react";
 
 const services = [
@@ -7,6 +8,8 @@ const services = [
     description:
       "Desarrollamos tu proyecto integral desde el diseño arquitectónico hasta la entrega final. Nos encargamos de todo: planeación, construcción, supervisión y acabados, garantizando altos estándares de calidad constructiva y cumplimiento en tiempos y costos.",
     gradient: "linear-gradient(135deg, #1a2744 0%, #2d4a7a 100%)",
+    image: "/gallery/portafolio/residencia-contemporanea-01/residencia-01-01.jpg",
+    imageAlt: "Residencia contemporánea terminada por Doble M",
     features: [
       "Diseño arquitectónico personalizado",
       "Tramitología y gestión de permisos",
@@ -25,6 +28,8 @@ const services = [
     description:
       "Ejecutamos proyectos de obra pública y privada con capacidad técnica, operativa y administrativa. Coordinamos personal especializado, proveedores y subcontratistas para garantizar excelencia en cada etapa de ejecución y cumplimiento operativo.",
     gradient: "linear-gradient(135deg, #2a1a0e 0%, #5c3a1e 100%)",
+    image: "/gallery/portafolio/residencia-contemporanea-02/residencia-02-08.jpg",
+    imageAlt: "Ejecución de proyecto arquitectónico residencial",
     features: [
       "Capacidad técnica y operativa comprobada",
       "Cumplimiento técnico y contractual",
@@ -42,6 +47,8 @@ const services = [
     description:
       "Ofrecemos servicios de remodelación, ampliaciones, adecuaciones arquitectónicas y mantenimiento preventivo y correctivo. Transformamos espacios existentes con diseño funcional, acabados premium y procesos constructivos eficientes.",
     gradient: "linear-gradient(135deg, #1a3a1a 0%, #2d5a2d 100%)",
+    image: "/gallery/portafolio/residencia-contemporanea-01/residencia-01-07.jpg",
+    imageAlt: "Cocina residencial remodelada con acabados contemporáneos",
     features: [
       "Remodelaciones integrales",
       "Ampliaciones arquitectónicas",
@@ -59,6 +66,8 @@ const services = [
     description:
       "Desarrollamos y comercializamos inmuebles propios, diseñados y construidos bajo los estándares de calidad, funcionalidad y excelencia constructiva de la compañía. Proyectos residenciales premium enfocados en plusvalía y diseño contemporáneo.",
     gradient: "linear-gradient(135deg, #0f2027 0%, #203a43 100%)",
+    image: "/gallery/propiedades/san-charbel/SCH12.png",
+    imageAlt: "Desarrollo residencial Vistas de San Charbel",
     features: [
       "Diseño contemporáneo exclusivo",
       "Ubicaciones estratégicas con plusvalía",
@@ -110,12 +119,21 @@ export default function ServiciosPage() {
                 className={service.reverse ? "lg:order-2" : ""}
               >
                 <div
-                  className="rounded-2xl overflow-hidden"
+                  className="relative rounded-2xl overflow-hidden shadow-lg"
                   style={{
                     height: "360px",
                     background: service.gradient,
                   }}
-                />
+                >
+                  <Image
+                    src={service.image}
+                    alt={service.imageAlt}
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                    className="object-cover transition-transform duration-700 hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-linear-to-t from-black/20 via-transparent to-transparent pointer-events-none" />
+                </div>
               </div>
               <div className={service.reverse ? "lg:order-1" : ""}>
                 <h2
